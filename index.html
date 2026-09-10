@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fdfcf9" />
+  <title>Yanti & Hendri | Undangan Pernikahan</title>
+  <meta name="description" content="Undangan pernikahan Yanti Krisnawati dan Hendri Suprayitno." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Italianno&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body.is-locked { position: fixed; inset: 0; width: 100%; overflow: hidden; }
+    .hero.opened.door-opening .gate-door-left { animation: door-open-left 1.5s cubic-bezier(.7, 0, .2, 1) forwards; }
+    .hero.opened.door-opening .gate-door-right { animation: door-open-right 1.5s cubic-bezier(.7, 0, .2, 1) forwards; }
+    .gate-door-left.is-open { animation: none; transform: rotateY(-105deg); }
+    .gate-door-right.is-open { animation: none; transform: rotateY(105deg); }
+    .hero.opened .gate-door-left.is-open { animation: none !important; transform: rotateY(-105deg) !important; }
+    .hero.opened .gate-door-right.is-open { animation: none !important; transform: rotateY(105deg) !important; }
+    .hero.door-fixed .gate-door-left,
+    .hero.door-fixed .gate-door-right { animation: none !important; transition: none !important; }
+    .hero.opened .gate-glow { animation: photo-pop 1.1s .85s cubic-bezier(.2, .85, .25, 1) both; }
+    .hero.opened .guest-card { animation: pop-up .8s cubic-bezier(.2, .8, .2, 1) both, float 4s 1s ease-in-out infinite; }
+    .hero.opened .hero-leaf,
+    .hero.opened .scroll-hint { animation: pop-up .8s .25s cubic-bezier(.2, .8, .2, 1) both; }
+    @keyframes pop-up {
+      from { opacity: 0; transform: translateY(24px) scale(.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes door-open-left {
+      from { transform: rotateY(0); }
+      to { transform: rotateY(-105deg); }
+    }
+    @keyframes door-open-right {
+      from { transform: rotateY(0); }
+      to { transform: rotateY(105deg); }
+    }
+    @keyframes photo-pop {
+      0% { opacity: 0; transform: scale(.35); }
+      70% { opacity: .9; transform: scale(1.06); }
+      100% { opacity: .82; transform: scale(1); }
+    }
+    .intro { position: relative; overflow: hidden; }
+    .side-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 5vw, 64px); max-width: 680px; margin: 72px auto 0; pointer-events: none; }
+    .side-photo {
+      position: relative;
+      width: clamp(120px, 15vw, 190px);
+      padding: 8px 8px 22px;
+      background: #fff;
+      box-shadow: 0 18px 38px rgba(39, 37, 33, .16);
+      transition: opacity 1.1s ease, transform 1.4s cubic-bezier(.2, .8, .2, 1);
+    }
+    .side-photo img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+    .side-photo-left { transform: translateY(40px) rotate(-4deg); }
+    .side-photo-right { transform: translateY(40px) rotate(4deg); transition-delay: .18s; }
+    .side-photo-left.visible { transform: translateY(0) rotate(-4deg); }
+    .side-photo-right.visible { transform: translateY(0) rotate(4deg); }
+    .signature { text-align: center; }
+    .footer-signature { text-align: center; }
+    @media (max-width: 480px) {
+      html { overflow-x: hidden; }
+      .section-shell { padding: 72px 20px; }
+      .hero { min-height: 620px; }
+      .hero-copy { top: 9%; width: calc(100% - 32px); }
+      .hero-copy h1 { font-size: clamp(42px, 14vw, 62px); }
+      .hero-date { letter-spacing: .2em; }
+      .gate-scene { width: min(300px, 78vw); height: 350px; margin-top: 70px; }
+      .guest-card { width: calc(100% - 40px); min-width: 0; padding: 12px 16px; }
+      .guest-card strong { font-size: 18px; overflow-wrap: anywhere; }
+      .open-button { max-width: calc(100% - 40px); }
+      .event-grid { grid-template-columns: 1fr; gap: 22px; }
+      .event-divider { width: 100%; height: 1px; }
+      .event-card strong { font-size: 20px; overflow-wrap: anywhere; }
+      .countdown { gap: 4px; }
+      .countdown div { min-width: 48px; }
+      .countdown strong { font-size: 30px; }
+      .countdown i { font-size: 18px; }
+      .address-block p { overflow-wrap: anywhere; }
+      .gift-card { padding: 34px 22px; }
+      .gift-card h2 { font-size: 36px; }
+      .bank-detail strong { font-size: clamp(24px, 8vw, 34px); overflow-wrap: anywhere; }
+      .wish-form .gold-button { width: 100%; justify-content: center; }
+      .side-photos { gap: 14px; margin-top: 48px; }
+      .side-photo { width: 128px; }
+      .side-photo-left { justify-self: end; transform: translateY(24px) rotate(-4deg); }
+      .side-photo-right { justify-self: start; transform: translateY(24px) rotate(4deg); }
+      .side-photo-left.visible { transform: translateY(0) rotate(-4deg); }
+      .side-photo-right.visible { transform: translateY(0) rotate(4deg); }
+    }
+  </style>
+</head>
+<body class="is-locked">
+  <div class="page-noise" aria-hidden="true"></div>
+  <main>
+    <section class="hero" id="home" aria-label="Pembuka undangan">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="hero-leaf hero-leaf-left" aria-hidden="true">❧</div>
+      <div class="hero-leaf hero-leaf-right" aria-hidden="true">❧</div>
+      <div class="hero-copy">
+        <p class="eyebrow">The wedding celebration of</p>
+        <h1>Yanti <span>&amp;</span> Hendri</h1>
+        <p class="hero-date">05 · 10 · 2026</p>
+      </div>
+      <div class="gate-scene" aria-hidden="true">
+        <div class="gate-glow" style="background-image: url('animasi pengantin.jpeg');"></div>
+        <div class="gate-door gate-door-left"><span>✦</span></div>
+        <div class="gate-door gate-door-right"><span>✦</span></div>
+        <div class="gate-arch"></div>
+      </div>
+      <div class="guest-card">
+        <span class="guest-label">Kepada Yth.</span>
+        <strong id="guestName">Bapak/Ibu/Saudara/i</strong>
+        <span class="guest-note">di tempat</span>
+      </div>
+      <button class="open-button" id="openInvitation" type="button">
+        <span>Buka Undangan</span><i aria-hidden="true">↗</i>
+      </button>
+      <p class="scroll-hint">Geser untuk menjelajah <span>↓</span></p>
+    </section>
+
+    <section class="intro section-shell" id="story">
+      <div class="section-kicker">Dengan penuh suka cita</div>
+      <div class="intro-layout">
+        <div class="intro-copy reveal">
+          <p class="script-title">We found love</p>
+          <h2>Dan berjanji untuk<br /><em>selamanya.</em></h2>
+          <p class="body-copy">Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk turut hadir dan menjadi bagian dari hari bahagia kami.</p>
+          <div class="side-photos" aria-label="Momen kebersamaan">
+            <div class="side-photo side-photo-left reveal">
+              <img src="foto 1.jpeg" alt="Momen kebersamaan Yanti dan Hendri" />
+            </div>
+            <div class="side-photo side-photo-right reveal">
+              <img src="foto 2.jpeg" alt="Momen kebersamaan Yanti dan Hendri" />
+            </div>
+          </div>
+          <div class="signature">Yanti Krisnawati, S.Pd.<br /><span>&amp;</span><br />Hendri Suprayitno</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="event section-shell" id="event">
+      <div class="section-heading reveal">
+        <div class="section-kicker">Save the date</div>
+        <h2>Menuju hari yang kami nantikan</h2>
+        <p>Senin, 5 Oktober 2026 · Kediri</p>
+      </div>
+      <div class="event-grid reveal">
+        <article class="event-card">
+          <span class="event-icon">✦</span>
+          <p class="event-label">Hari, Tanggal</p>
+          <strong>Senin, 5 Oktober<br />2026</strong>
+          <span>Hari bahagia keluarga kami</span>
+        </article>
+        <div class="event-divider"></div>
+        <article class="event-card">
+          <span class="event-icon">✧</span>
+          <p class="event-label">Waktu Acara</p>
+          <strong>Rileks</strong>
+          <span>Menanti kehadiran Anda</span>
+        </article>
+      </div>
+      <div class="countdown-wrap reveal">
+        <p class="countdown-title">Menghitung hari menuju perayaan</p>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div><strong id="days">00</strong><span>Hari</span></div><i>:</i>
+          <div><strong id="hours">00</strong><span>Jam</span></div><i>:</i>
+          <div><strong id="minutes">00</strong><span>Menit</span></div><i>:</i>
+          <div><strong id="seconds">00</strong><span>Detik</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="location">
+      <div class="location-inner section-shell">
+        <div class="section-heading reveal">
+          <div class="section-kicker">Where to find us</div>
+          <h2>Temui kami di sini</h2>
+        </div>
+        <div class="location-grid">
+          <div class="address-block reveal">
+            <p class="small-label">Lokasi acara</p>
+            <h3>Desa Doko<br />Kecamatan Ngasem</h3>
+            <p>Jl. Rahayu No. 294 RT. 39 RW. 0, Desa Doko, Kec. Ngasem, Kab. Kediri</p>
+            <a class="gold-button" href="https://maps.google.com/?q=Jl.+Rahayu+No.+294,+Doko,+Ngasem,+Kediri" target="_blank" rel="noreferrer">Buka Google Maps <span>↗</span></a>
+          </div>
+          <div class="map-frame reveal">
+            <iframe title="Peta lokasi acara di Desa Doko, Ngasem, Kediri" src="https://www.google.com/maps?q=Jl.%20Rahayu%20No.%20294,%20Doko,%20Ngasem,%20Kediri&output=embed" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wishes section-shell" id="wishes">
+      <div class="wishes-layout">
+        <div class="section-heading reveal">
+          <div class="section-kicker">A little note from you</div>
+          <h2>Kirim doa dan ucapan</h2>
+          <p>Doa baik dari Anda adalah hadiah yang paling berarti untuk kami.</p>
+        </div>
+        <form class="wish-form reveal" id="wishForm">
+          <label>Nama Anda<input id="wishName" type="text" placeholder="Tulis nama Anda" required /></label>
+          <label>Ucapan &amp; doa<textarea id="wishMessage" rows="4" placeholder="Tuliskan ucapan terbaik Anda..." required></textarea></label>
+          <button class="gold-button" type="submit">Kirim Ucapan <span>↗</span></button>
+          <p class="wish-status" id="wishStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="wish-feed" id="wishFeed" aria-live="polite">
+          
+      </div>
+    </section>
+
+    <section class="gift section-shell" id="gift">
+      <div class="gift-card reveal">
+        <div class="gift-copy">
+          <div class="section-kicker">Your presence is enough</div>
+          <h2>Kondangan Online</h2>
+          <p>Doa restu Anda adalah kebahagiaan bagi kami. Namun bila ingin berbagi tanda kasih, dapat melalui:</p>
+        </div>
+        <div class="bank-detail">
+          <span class="bank-name">BANK BRI</span>
+          <strong>320701006394505</strong>
+          <span>a.n. Keluarga Yanti &amp; Hendri</span>
+          <button class="copy-button" id="copyAccount" type="button"><span id="copyLabel">Salin No. Rekening</span> <i>▣</i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-ornament">✦</div>
+    <p>Hormat kami,</p>
+    <strong class="footer-signature">Bapak SUROSO (Alm)<br /><span>&amp;</span><br />Ibu SUMIATI<br />Sekeluarga</strong>
+    <small>Dibuat oleh wp.audy</small>
+  </footer>
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Matikan musik" title="Musik on">♫</button>
+  <audio id="backgroundMusic" src="gamelan-gold.mp3" loop preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
