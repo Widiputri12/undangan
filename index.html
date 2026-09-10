@@ -24,6 +24,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Italianno&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
+    .icon { display: inline-block; font-style: normal; line-height: 1; }
+    .icon-leaf::before { content: '\2767'; }
+    .icon-spark::before { content: '\2726'; }
+    .icon-calendar::before { content: '\25A3'; }
+    .icon-clock::before { content: '\25F7'; }
+    .icon-arrow::before { content: '\2197'; }
+    .icon-copy::before { content: '\25A3'; }
+    .icon-music::before { content: '\266B'; }
+    .icon-check::before { content: '\2713'; }
     body.is-locked { position: fixed; inset: 0; width: 100%; overflow: hidden; }
     .hero.opened.door-opening .gate-door-left { animation: door-open-left 1.5s cubic-bezier(.7, 0, .2, 1) forwards; }
     .hero.opened.door-opening .gate-door-right { animation: door-open-right 1.5s cubic-bezier(.7, 0, .2, 1) forwards; }
@@ -108,8 +117,8 @@
   <main>
     <section class="hero" id="home" aria-label="Pembuka undangan">
       <div class="hero-pattern" aria-hidden="true"></div>
-      <div class="hero-leaf hero-leaf-left" aria-hidden="true">❧</div>
-      <div class="hero-leaf hero-leaf-right" aria-hidden="true">❧</div>
+      <div class="hero-leaf hero-leaf-left" aria-hidden="true"><span class="icon icon-leaf"></span></div>
+      <div class="hero-leaf hero-leaf-right" aria-hidden="true"><span class="icon icon-leaf"></span></div>
       <div class="hero-copy">
         <p class="eyebrow">The wedding celebration of</p>
         <h1>Yanti <span>&amp;</span> Hendri</h1>
@@ -117,8 +126,8 @@
       </div>
       <div class="gate-scene" aria-hidden="true">
         <div class="gate-glow" style="background-image: url('animasi pengantin.jpeg');"></div>
-        <div class="gate-door gate-door-left"><span>✦</span></div>
-        <div class="gate-door gate-door-right"><span>✦</span></div>
+        <div class="gate-door gate-door-left"><span class="icon icon-spark" aria-hidden="true"></span></div>
+        <div class="gate-door gate-door-right"><span class="icon icon-spark" aria-hidden="true"></span></div>
         <div class="gate-arch"></div>
       </div>
       <div class="guest-card">
@@ -160,14 +169,14 @@
       </div>
       <div class="event-grid reveal">
         <article class="event-card">
-          <span class="event-icon">✦</span>
+          <span class="event-icon icon icon-calendar" aria-hidden="true"></span>
           <p class="event-label">Hari, Tanggal</p>
           <strong>Senin, 5 Oktober<br />2026</strong>
           <span>Hari bahagia keluarga kami</span>
         </article>
         <div class="event-divider"></div>
         <article class="event-card">
-          <span class="event-icon">✧</span>
+          <span class="event-icon icon icon-clock" aria-hidden="true"></span>
           <p class="event-label">Waktu Acara</p>
           <strong>Rileks</strong>
           <span>Menanti kehadiran Anda</span>
@@ -195,7 +204,7 @@
             <p class="small-label">Lokasi acara</p>
             <h3>Desa Doko<br />Kecamatan Ngasem</h3>
             <p>Jl. Rahayu No. 294 RT. 39 RW. 0, Desa Doko, Kec. Ngasem, Kab. Kediri</p>
-            <a class="gold-button" href="https://maps.google.com/?q=Jl.+Rahayu+No.+294,+Doko,+Ngasem,+Kediri" target="_blank" rel="noreferrer">Buka Google Maps <span>↗</span></a>
+            <a class="gold-button" href="https://maps.google.com/?q=Jl.+Rahayu+No.+294,+Doko,+Ngasem,+Kediri" target="_blank" rel="noreferrer">Buka Google Maps <span class="icon icon-arrow" aria-hidden="true"></span></a>
           </div>
           <div class="map-frame reveal">
             <iframe title="Peta lokasi acara di Desa Doko, Ngasem, Kediri" src="https://www.google.com/maps?q=Jl.%20Rahayu%20No.%20294,%20Doko,%20Ngasem,%20Kediri&output=embed" loading="lazy"></iframe>
@@ -214,7 +223,7 @@
         <form class="wish-form reveal" id="wishForm">
           <label>Nama Anda<input id="wishName" type="text" placeholder="Tulis nama Anda" required /></label>
           <label>Ucapan &amp; doa<textarea id="wishMessage" rows="4" placeholder="Tuliskan ucapan terbaik Anda..." required></textarea></label>
-          <button class="gold-button" type="submit">Kirim Ucapan <span>↗</span></button>
+          <button class="gold-button" type="submit">Kirim Ucapan <span class="icon icon-arrow" aria-hidden="true"></span></button>
           <p class="wish-status" id="wishStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -234,19 +243,19 @@
           <span class="bank-name">BANK BRI</span>
           <strong>320701006394505</strong>
           <span>a.n. Keluarga Yanti &amp; Hendri</span>
-          <button class="copy-button" id="copyAccount" type="button"><span id="copyLabel">Salin No. Rekening</span> <i>▣</i></button>
+          <button class="copy-button" id="copyAccount" type="button"><span id="copyLabel">Salin No. Rekening</span> <i class="icon icon-copy" aria-hidden="true"></i></button>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-ornament">✦</div>
+    <div class="footer-ornament"><span class="icon icon-spark" aria-hidden="true"></span></div>
     <p>Hormat kami,</p>
     <strong class="footer-signature">Bapak SUROSO (Alm)<br /><span>&amp;</span><br />Ibu SUMIATI<br />Sekeluarga</strong>
     <small>Dibuat oleh wp.audy</small>
   </footer>
-  <button class="music-toggle" id="musicToggle" type="button" aria-label="Matikan musik" title="Musik on">♫</button>
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Matikan musik" title="Musik on"><span class="icon icon-music" aria-hidden="true"></span></button>
   <audio id="backgroundMusic" src="gamelan-gold.mp3" loop preload="auto"></audio>
   <script src="script.js"></script>
 </body>

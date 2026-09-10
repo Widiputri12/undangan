@@ -61,7 +61,7 @@ openButton.addEventListener('click', () => {
 
   hero.classList.add('opened', 'door-opening');
   window.setTimeout(beginScroll, 2050);
-  openButton.innerHTML = '<span>Selamat datang</span><i aria-hidden="true">✓</i>';
+  openButton.innerHTML = '<span>Selamat datang</span><i class="icon icon-check" aria-hidden="true"></i>';
   openButton.disabled = true;
   startAmbientMusic();
 });
